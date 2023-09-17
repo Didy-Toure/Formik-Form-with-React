@@ -1,6 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import Button from 'react-bootstrap/button';
+import BsForm from 'react-bootstrap/Form';
+
 
 const MyForm = () => {
     return (
@@ -25,7 +28,7 @@ const MyForm = () => {
                 }, 1000);
             }}
         >
-            <Form>
+            <Form as={BsForm} noValidate>
                 <div>
                 <label htmlFor="name">Name</label>
                 <Field name="name" type="text" />
@@ -41,7 +44,7 @@ const MyForm = () => {
                 <Field name="password" type="password" />
                 <ErrorMessage name="password" />
                 </div>
-                <button type="submit">Submit</button>
+                <Button type="submit">Submit</Button>
             </Form>
         </Formik>
 
